@@ -19,5 +19,8 @@ tasks.withType(JavaCompile) {
 }
 
 test {
-    useJUnitPlatform()
+    String tags = System.getProperty("tags") != null ? System.getProperty("tags") : "smoke"
+    useJUnitPlatform {
+        includeTags tags
+    }
 }
