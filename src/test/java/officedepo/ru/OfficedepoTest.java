@@ -67,6 +67,10 @@ public class OfficedepoTest extends TestBase {
 
     @MethodSource
     @DisplayName("Проверка наличия подкатегорий каталога канцелярских товаров магазина Офис депо")
+    @Tags({
+            @Tag("smoke"),
+            @Tag("web")
+    })
     @ParameterizedTest(name = "Проверка отображения в каталоге подкатегорий для категории {0}")
     void catalogSubCategoryListTest(String catalogCategoryName, List<String> subCategoriesNames) {
         open(baseUrl);
